@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+	color: darkred;
+	font-size: 18px;
+}
+h1 {
+	color: maroon;
+}
+h2 {
+	color: maroon;
+}
+</style>
+<style>
+body {
+  background-color: lightblue;
+}
+</style>
+<h1>Welcome to "Dice Detective"!</h1>
+<img src="detectivesilhouette.jpg" alt="Detective" height="122" width="172">
+<p>"Yay! Yet <em>another</em> detective game," you may think to yourself unenthusiastically. Even if you're excited to play detective again and solve this unusual murder mystery involving <b>20</b> suspects and <b>15</b> witnesses and a potential criminal organization....<em>Gasp!</em> You still stepped into the shoes of an absolute idiot. The only thing that makes you the capable detective that you are is pure dumb luck with your trusty dice. Don't get too comfortable with the idea that you're the luckiest man in the world as luck can even run out for the Dice Detective.<br>Dice Detective David Daniels has unwittingly met his match with La Famiglia Dei Numeri, a numbers themed organized crime family. Sometimes the police like to go undercover for stake out, which is similarily how La Famiglia Dei Numeri like to commit murders to ensure their enemies are where they're supposed to be: sleeping with the fishies. Once the clock struck midnight, a gunshot sounded outside of a downtown apartment building. Within the corpse's icy cold fingers was a note with the number "32" printed on it accompanied by a rare pair of dice, one twenty sided and one fifteen sided. Any coincidence that <b>fifteen</b> witnesses stepped forth as the police rounded up <b>twenty</b> suspects? Det. Daniels suspects there is more at play to this murder mystery. Is the Dice Detective up to the task to put this mafia family away by finding the right numbers leading to the right suspect/s, or is he going to be yet another to measure himself for cement shoes? Also, what is the significance behind the number "32"? Listen to your concentration music and solve this case, Detective!</p>
+<style type="text/css">
+div.dice{
+	float:left;
+	width:32px;
+	background:#F5F5F5;
+	border:#999 1px solid;
+	padding:10px;
+	font-size:24px;
+	text-align:center;
+	margin:5px;
+}
+</style>
+<script>
+function rollDice(){
+	let die1 = document.getElementById("die1");
+	let die2 = document.getElementById("die2");
+	//Tried implementing more than two dice, but was not able to implement a way without sacrificing game functionality. Left the code within comments.
+	//let die3 = document.getElementById("die3");
+	//let die4 = document.getElementById("die4");
+	//let die5 = document.getElementById("die5");
+	//let die6 = document.getElementById("die6");
+	let status = document.getElementById("status");
+	let d1 = Math.floor(Math.random() * 20) + 1;
+	let d2 = Math.floor(Math.random() * 15) + 1;
+	//let d3 = Math.floor(Math.random() * 12) + 1;
+	//let d4 = Math.floor(Math.random() * 10) + 1;
+	//let d5 = Math.floor(Math.random() * 8) + 1;
+	//let d6 = Math.floor(Math.random() * 6) + 1;
+	let diceTotal = d1 + d2;
+	//let diceTotal = d3 + d4;
+	//let diceTotal = d5 + d6;
+	die1.innerHTML = d1;
+	die2.innerHTML = d2;
+	status.innerHTML = "You roll the dice and produce the number "+diceTotal+". But what does it mean?";
+	if(diceTotal == 35) document.write('<img src="pixeldetective.jpg"> You solved the case and managed to bring in the entire mob. All of your colleagues celebrate at the precinct and sing "For He\'s a Jolly Good Fellow" over cake and donuts. Then your alarm goes off and you realize it was all just a dream. Bummer. Hit reload to try again.<embed src="noirsound.mp3" autostart="true" loop="false" width="2" height="0">');
+	else if(diceTotal == 34) document.write('<img src="pixeldetective.jpg"> Congratulations! You managed to turn in the mob boss. Unfortunately, starting with the head is not always the best way to take down a monster, especially not one with multiple heads. The mob boss has an incredible lawyer that managed to keep him out of the pen. Guess you have to reload this page to try again.<embed src="noirsound.mp3" autostart="true" loop="false" width="2" height="0">');
+	else if(diceTotal == 33) document.write('<img src="lafamiglia.jpg"> Game Over! The odds were not in your favor. La Famiglia Dei Numeri discovered you were hot on their heels and riddled you with bullets. Tough to solve a case as a dead man. Reload the page to try again.<embed src="thompson.mp3" autostart="true" loop="false" width="2" height="0">');
+	else if(diceTotal == 32) document.write('<img src="pixeldetective.jpg"> Unbelievable! You brought down an entire criminal organization! You certainly are the luckiest detective. There may be other endings to this murder mystery. Reload this page to find them.<embed src="noirsound.mp3" autostart="true" loop="false" width="2" height="0">');
+	else if(diceTotal == 31) document.write('<img src="lafamiglia.jpg"> Game Over?! DOH! La Famiglia Dei Numeri fit you for some cement shoes. At least the fish have company tonight. Reload the page to try again.<embed src="thompson.mp3" autostart="true" loop="false" width="2" height="0">');	
+	else if(diceTotal == 30) document.write('<img src="pixeldetective.jpg"> Good job! You brought in the main murder suspect, Lorenzo Trenta, but he was just a pawn. The rest of the organization is still at large and you need to bring them down. Reload the page to keep at it, Detective.<embed src="noirsound.mp3" autostart="true" loop="false" width="2" height="0">');
+	else if(diceTotal == 29) document.write('<img src="dice.jpg"> Are you at least considering switching to six sided dice yet, or do you like the odds heavily stacked against you? Reload the page to try again.<embed src="dicesound.mp3" autostart="true" loop="false" width="2" height="0">');
+	else if(diceTotal == 28) document.write('<img src="pixeldetective.jpg"> You managed to bring in a Lieutenant. Apparently they call you the lucky detective for a reason because it sure was not skill that helped you. Reload the page to get back out there, Detective.<embed src="noirsound.mp3" autostart="true" loop="false" width="2" height="0">');
+	else if(diceTotal == 27) document.write('<img src="lafamiglia.jpg"> Game Over! La Famiglia Dei Numeri made you an offer you could NOT refuse. At least their pay roll is a lot better, but now the department you worked for hired a Supercop to take down the WHOLE organization single-handedly. Tough break. What kept them from just doing that in the first place? Reload the page to try again.<embed src="thompson.mp3" autostart="true" loop="false" width="2" height="0">');
+	else if(diceTotal == 23) document.write('<img src="mobgirl.jpg"> You get a little wasted at a nightclub owned by La Famiglia Dei Numeri and fall in love with the mob boss\'s daughter. Is this where you drop the case?<embed src="wolfwhistle.mp3" autostart="true" loop="false" width="2" height="0">');
+	else if(diceTotal == 21) document.write('<img src="blackjack.jpg"> 21! You decided to take a break and enjoy a game of Blackjack at the biggest casino in town, which is obviously owned by La Famiglia Dei Numeri. You decide being a detective is no longer your passion and retire with your earnings in Florida winning countless games of Bingo against senior citizens. Somebody else can solve this case, like somebody on the mob\'s payroll. Or you could...you know...reload the page to start over.<embed src="21win.mp3" autostart="true" loop="false" width="2" height="0">');
+	else if(diceTotal == 20) document.write('<img src="lafamiglia.jpg"> Game Over! So luck runs out even for the lucky Dice Detective. You followed the leads straight to the state unemployment office. Maybe try a different profession. Reload the page to try again.<embed src="dundundun.mp3" autostart="true" loop="false" width="2" height="0">');
+	else if(diceTotal == 15) document.write('<img src="pixeldetective.jpg"> You\'re hot on the case and getting closer to solving it. When you rolled the dice, it produced the number 15, which led you to interrogating the right suspect. Reload the page to keep at it.<embed src="noirsound.mp3" autostart="true" loop="false" width="2" height="0">');
+	else if(diceTotal == 13) document.write('<img src="pixeldetective.jpg"> You are hot on the case and getting closer to solving it. When you rolled the dice, it produced the number 13, which led you to investigating the right witness. Reload the page to keep at it.<embed src="noirsound.mp3" autostart="true" loop="false" width="2" height="0">');
+	else if(diceTotal == 9) document.write('<img src="shower.jpg"> You accidentally walked in on your Captain while he was in the shower. A little more than you needed to see of your 57 year old slightly overweight superior. It might be tough to solve this case as you\'re too distracted with Googling ways of gouging out your inner eye.<embed src="dundundun.mp3" autostart="true" loop="false" width="2" height="0">');
+	if(d1 == d2){
+		status.innerHTML += " It means your luck led you to a pretty significant clue. Keep at it, Detective!";
+	}
+
+}
+</script>
+<script>
+function myFunction() {
+	document.getElementById("demo").innerHTML = "Paragraph changed.";
+}
+</script>
+</head>
+<body>
+
+<h2>Be a professional and try out your deduction skills:</h2>
+
+<button onclick="myFunction()">Deduce Like a Detective.</button>
+
+<p id="demo"></p>
+
+<script>
+	function myFunction() {
+		let txt;
+		if (confirm("Press OK or Cancel to see where your deduction skills take you.")) {
+			txt = "Your luck almost ran out. La Famiglia Dei Numeri have some muscle on their side that are quick to clip you. Maybe try your luck in a different way?";
+		} else {
+			txt = "You rounded up someone innocent. Try to follow your luck and see where that gets you.";
+		}
+		document.getElementById("demo").innerHTML = txt;
+	}
+</script>
+
+<div id="die1" class="dice">0</div>
+<div id="die2" class="dice">0</div>
+<button onclick="rollDice()">Try your luck.</button>
+<h2 id="status" style="clear:left;"></h2>
+<embed src="filmnoir.mp3" autostart="true" loop="false" width="2" height="0">
+</body>
+</html>
